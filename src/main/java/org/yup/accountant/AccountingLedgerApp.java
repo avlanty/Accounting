@@ -16,12 +16,15 @@ public class AccountingLedgerApp {
             Scanner scanner = new Scanner(System.in);
 
             System.out.println("Welcome to the bank!");
+            System.out.print(UserInput.dOrW());
+            String testAns = scanner.nextLine();
+            System.out.println();
             int numOfFields = 5;
 
             //getting info to send into the file
-            System.out.println("Enter the required info for your transactions.");
+            System.out.println("Enter the required info for your transactions. \n");
             for (int i = 0; i < numOfFields; i++){
-                System.out.print(getInfoQuest(i));
+                System.out.print(UserInput.getInfoQuest(i));
                 String input = scanner.nextLine();
                 editFile.write(input);
 
@@ -34,7 +37,7 @@ public class AccountingLedgerApp {
             editFile.write("\n");
 
             editFile.flush();
-            System.out.println("Your transaction has been saved.");
+            System.out.println("\nYour transaction has been saved.");
             usingFile.close();
             editFile.close();
 
@@ -45,9 +48,4 @@ public class AccountingLedgerApp {
         }
     }
 
-    //method to return infoQuest for transactions
-    public static String getInfoQuest(int field){
-        String[] infoQuest = {"Enter date (YYYY-MM-DD): ", "Enter time (HH:MM:SS): ", "Enter description: ", "Enter vendor: ", "Enter amount: $"};
-        return infoQuest[field];
-    }
 }
