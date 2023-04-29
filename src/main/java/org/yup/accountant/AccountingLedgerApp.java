@@ -15,19 +15,26 @@ public class AccountingLedgerApp {
             BufferedWriter editFile = new BufferedWriter(usingFile);
             Scanner scanner = new Scanner(System.in);
 
-            //getting info to send into the file
-            System.out.print("Type a number: ");
-            int userSelection = scanner.nextInt();
-            System.out.println("You chose: " + userSelection + ".");
+            System.out.println("Welcome to the bank!");
+            int numOfFields = 5;
 
-            //note: this doesn't work as intended, figure out a way fix it
-            int i = 1;
-            while(i < userSelection){
-                int test = scanner.nextInt();
-                editFile.write(userSelection + "\n");
-                i++;
+            //getting info to send into the file
+            System.out.println("Enter the required info for your transactions.");
+            for (int i = 0; i < numOfFields; i++){
+                System.out.print(getInfoQuest(i));
+                String input = scanner.nextLine();
+                editFile.write(input);
+
+                //only adds the pipe if it is the last field
+                if(i != numOfFields - 1){
+                    editFile.write("|");
+                }
             }
-            System.out.println("We are going to use your chosen number to add it to our transactions file as a test.");
+
+            editFile.write("\n");
+
+            editFile.flush();
+            System.out.println("Your transaction has been saved.");
             usingFile.close();
             editFile.close();
 
@@ -36,5 +43,11 @@ public class AccountingLedgerApp {
             System.out.println("Sorry, we couldn't create the file.");
 
         }
+    }
+
+    //method to return infoQuest for transactions
+    public static String getInfoQuest(int field){
+        String[] infoQuest = {"Enter date (YYYY-MM-DD): ", "Enter time (HH:MM:SS): ", "Enter description: ", "Enter vendor: ", "Enter amount: $"};
+        return infoQuest[field];
     }
 }
