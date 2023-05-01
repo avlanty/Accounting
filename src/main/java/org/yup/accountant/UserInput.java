@@ -1,4 +1,5 @@
 package org.yup.accountant;
+
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -15,18 +16,22 @@ public class UserInput {
     public static String dOrW(){
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Will you be making a Deposit or Withdrawal? (D/W): ");
-        String choice = scanner.next();
-        System.out.print("\n");
 
-        /* if you choose W or D, it will tell you what you chose
-        I also want it to give you an error if you choose incorrectly */
-        if(Objects.equals(choice.toLowerCase(), "d")){
-            return "You chose to make a deposit.\n";
-        }else if(Objects.equals(choice.toLowerCase(), "w")){
-            return "You chose to make a withdrawal.\n";
-        }else{
-            return "Error: Wrong Input.\n";
+        while(true){
+
+            System.out.print("Will you be making a Deposit or Withdrawal? (D/W): ");
+            String choice = scanner.next();
+
+            switch (choice){
+                case "d":
+                    return "\nYou are making a Deposit.\n";
+                case "w":
+                    return "\nYou are making a Withdrawal.\n";
+                default:
+                    System.out.println("Invalid choice. Please choose either 'D' or 'W'.\n");
+                    break;
+            }
+
         }
 
     }

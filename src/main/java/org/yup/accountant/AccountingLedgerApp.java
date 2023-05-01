@@ -15,13 +15,14 @@ public class AccountingLedgerApp {
             BufferedWriter editFile = new BufferedWriter(usingFile);
             Scanner scanner = new Scanner(System.in);
 
-            System.out.println("Welcome to the bank!");
+            System.out.println("\nWelcome to the bank!");
             System.out.print(UserInput.dOrW());
             int numOfFields = 5;
 
             // getting info to send into the file
             System.out.println("Enter the required info for your transactions. \n");
             for (int i = 0; i < numOfFields; i++){
+
                 System.out.print(UserInput.getInfoQuest(i));
                 String input = scanner.nextLine();
                 editFile.write(input);
@@ -30,6 +31,7 @@ public class AccountingLedgerApp {
                 if(i != numOfFields - 1){
                     editFile.write("|");
                 }
+
             }
 
             editFile.write("\n");
@@ -44,6 +46,7 @@ public class AccountingLedgerApp {
             System.out.println("Sorry, we couldn't create the file.");
 
         }
+
     }
 
 }
