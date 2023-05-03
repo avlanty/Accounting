@@ -1,17 +1,19 @@
 package org.yup.accountant;
 
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
 public class AccountingLedgerApp {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
+
 
         try {
             // calling in stuff for us to use
-            FileWriter usingFile = new FileWriter("transactions.csv");
+            FileWriter usingFile = new FileWriter("transactions.csv", true);
             BufferedWriter editFile = new BufferedWriter(usingFile);
             Scanner scanner = new Scanner(System.in);
 
@@ -48,5 +50,5 @@ public class AccountingLedgerApp {
         }
 
     }
+    }
 
-}
