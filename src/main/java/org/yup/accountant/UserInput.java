@@ -1,7 +1,6 @@
 package org.yup.accountant;
 
 import java.io.*;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class UserInput {
@@ -22,6 +21,7 @@ public class UserInput {
 
         while(true){
 
+            System.out.println("\nWelcome to the bank!");
             System.out.print("\nWhat would you like to do?\n (1) View ledger\n (2) Make a Deposit or Withdrawal\n (3) Exit app\n");
             String choice = scanner.next();
 
@@ -49,7 +49,6 @@ public class UserInput {
                         FileWriter usingFile = new FileWriter("transactions.csv", true);
                         BufferedWriter editFile = new BufferedWriter(usingFile);
 
-                        System.out.println("\nWelcome to the bank!");
                         int numOfFields = 5;
 
                         // getting info to send into the file
