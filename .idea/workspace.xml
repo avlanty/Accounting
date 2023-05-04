@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ca616db-72fa-4bff-873b-3369bea5bdb0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/yup/accountant/AccountingLedgerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/yup/accountant/AccountingLedgerApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/yup/accountant/Screens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/yup/accountant/Screens.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/yup/accountant/UserInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/yup/accountant/Transactions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/transactions.csv" beforeDir="false" afterPath="$PROJECT_DIR$/transactions.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

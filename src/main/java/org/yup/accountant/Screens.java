@@ -29,18 +29,53 @@ public class Screens {
                         // reads the csv file and shows the info in it
                         FileReader fileReader = new FileReader("transactions.csv");
                         BufferedReader bufferedReader = new BufferedReader(fileReader);
-                        String line = null;
-                        while ((line = bufferedReader.readLine()) != null) {
-                            System.out.println(line);
-                            System.out.println("\nWould you like to return to the Main Menu?");
+//                        String line = null;
+//                        while ((line = bufferedReader.readLine()) != null) {
+//                            System.out.println(line);
+//                        }
+//                        bufferedReader.close();
+//                        fileReader.close();
+
+                        boolean searchOn = true;
+
+                        while(searchOn){
+                            System.out.println("\nChoose a search option:\n (1) Show all transactions\n (2) Show deposits\n (3) Show withdrawals\n (4) Show by month\n (5) Show by year\n (6) etc etc\n (7) Exit");
+                            String srchChoice = scanner.next();
+
+                            switch (srchChoice){
+                                case "1":
+                                    // show all
+                                    break;
+
+                                case "2":
+                                    // show deposits
+                                    break;
+
+                                case "3":
+                                    // show withdrawals
+                                    break;
+
+                                case "4":
+                                    // show month
+                                    break;
+
+                                case "5":
+                                    // show year
+                                    break;
+
+                                case "6":
+                                    // whatever
+                                    break;
+
+                                case "7":
+                                    System.exit(0);
+                            }
+
                         }
-                        bufferedReader.close();
-                        fileReader.close();
+
                     } catch (IOException e) {
                         System.out.println("Error reading transactions file.");
                     }
-
-                    System.exit(0);
 
                 case "2":
                     try {
