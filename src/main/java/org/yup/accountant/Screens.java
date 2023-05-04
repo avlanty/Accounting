@@ -29,12 +29,6 @@ public class Screens {
                         // reads the csv file and shows the info in it
                         FileReader fileReader = new FileReader("transactions.csv");
                         BufferedReader bufferedReader = new BufferedReader(fileReader);
-//                        String line = null;
-//                        while ((line = bufferedReader.readLine()) != null) {
-//                            System.out.println(line);
-//                        }
-//                        bufferedReader.close();
-//                        fileReader.close();
 
                         boolean searchOn = true;
 
@@ -43,31 +37,47 @@ public class Screens {
                             String srchChoice = scanner.next();
 
                             switch (srchChoice){
+
+                                // shows all transactions
                                 case "1":
-                                    // show all
-                                    break;
+                                    System.out.println("\nHere are all the transactions");
+                                    String line = null;
+                                    while ((line = bufferedReader.readLine()) != null) {
+                                        System.out.println(line);
+                                    }
+                                    bufferedReader.close();
+                                    fileReader.close();
 
+                                    System.exit(0);
+
+                                // shows all deposits
                                 case "2":
-                                    // show deposits
-                                    break;
+                                    System.out.println("Here are all the deposits");
+                                    System.exit(0);
 
+                                // shows all withdrawals
                                 case "3":
-                                    // show withdrawals
-                                    break;
+                                    System.out.println("Here are all the withdrawals");
+                                    System.exit(0);
 
+                                // shows by month
                                 case "4":
-                                    // show month
-                                    break;
+                                    System.out.println("Here are all the months");
+                                    System.exit(0);
 
+                                // shows by year
                                 case "5":
-                                    // show year
-                                    break;
+                                    System.out.println("Here are all the years");
+                                    System.exit(0);
 
+                                // shows whatever (placeholder)
                                 case "6":
-                                    // whatever
-                                    break;
+                                    System.out.println("This is just a placeholder for now");
+                                    System.exit(0);
 
+                                // exits app
                                 case "7":
+                                    System.out.println("Exiting app.");
                                     System.exit(0);
                             }
 
