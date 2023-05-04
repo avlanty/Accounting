@@ -10,7 +10,7 @@ public class AccountingLedgerApp {
 
         try {
 
-            System.out.println(UserInput.dOrW());
+            Screens.dOrW();
 
 
         }catch(IOException e) {
