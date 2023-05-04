@@ -1,6 +1,7 @@
 package org.yup.accountant;
 
 import java.io.*;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class UserInput {
@@ -8,7 +9,7 @@ public class UserInput {
     // method to return infoQuest for transactions
     public static String getInfoQuest(int field){
 
-        String[] infoQuest = {"Enter date (YYYY-MM-DD): ", "Enter time (HH:MM:SS): ", "Enter description: ", "Enter vendor: ", "Enter amount: $"};
+        String[] infoQuest = {"\nEnter date (YYYY-MM-DD): ", "Enter time (HH:MM:SS): ", "Enter description: ", "Enter vendor: ", "Enter amount: $"};
         return infoQuest[field];
 
     }
@@ -22,7 +23,7 @@ public class UserInput {
         while(true){
 
             System.out.println("\nWelcome to the bank!");
-            System.out.print("\nWhat would you like to do?\n (1) View ledger\n (2) Make a Deposit or Withdrawal\n (3) Exit app\n");
+            System.out.print("\nWhat would you like to do?\n (1) View ledger\n (2) Make a Transaction\n (3) Exit app\n");
             String choice = scanner.next();
 
             switch (choice){
@@ -34,6 +35,7 @@ public class UserInput {
                         String line = null;
                         while ((line = bufferedReader.readLine()) != null) {
                             System.out.println(line);
+                            System.out.println("\nWould you like to return to the Main Menu?");
                         }
                         bufferedReader.close();
                         fileReader.close();
@@ -51,8 +53,19 @@ public class UserInput {
 
                         int numOfFields = 5;
 
-                        // getting info to send into the file
-                        System.out.println("Enter the required info for your transactions. \n");
+                        // asking user to choose transType
+                        System.out.println("\nSelect the type of transaction:\n (1) Deposit\n (2) Withdrawal");
+                        String transType = scanner.next();
+
+                        if (Objects.equals(transType, "1")){
+                            System.out.println("Enter the required info for your deposit.");
+                        } else if (Objects.equals(transType, "2")) { // Withdrawal
+                            System.out.println("Enter the required info for your withdrawal.");
+                        } else {
+                            System.out.println("Invalid choice. Try again later.\n");
+                            break;
+                        }
+
                         for (int i = 0; i < numOfFields; i++){
 
                             System.out.print(getInfoQuest(i));
